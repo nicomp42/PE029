@@ -1,0 +1,19 @@
+// Problem 029 Main
+// http://projecteuler.net/problem=29
+
+package problem025;
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Problem019 problem019 = new Problem019();
+		
+		System.out.println("Problem 019: " + problem019.Solve());
+		
+	}
+
+}

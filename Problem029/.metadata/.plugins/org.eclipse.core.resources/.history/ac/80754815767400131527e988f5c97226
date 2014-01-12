@@ -1,0 +1,73 @@
+// http://projecteuler.net/problem=19
+
+package problem019;
+
+/*
+
+
+You are given the following information, but you may prefer to do some research for yourself.
+
+    1 Jan 1900 was a Monday.
+    Thirty days has September,
+    April, June and November.
+    All the rest have thirty-one,
+    Saving February alone,
+    Which has twenty-eight, rain or shine.
+    And on leap years, twenty-nine.
+    A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
+
+How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+
+ */
+
+public class Problem019 {
+	public int Solve() {
+		int result = 0;
+		int day = 1, month = 1, year = 1900;
+		
+		while (true) {
+			switch(month) {
+			case 1:		// Jan
+				
+				break;
+			case 2:		// Feb
+				
+				break;
+			case 3:		// Mar
+				
+				break;
+			case 4:		// Apr
+				
+				break;
+			case 5:		// May
+				
+				break;
+			case 6:		// Jun
+				
+				break;
+			case 7:		// Jul
+				
+				break;
+			case 8:		// Aug
+				
+				break;
+			case 9:		// Sep
+				
+				break;
+			case 10:	// Oct
+				
+				break;
+			case 11:	// Nov
+				
+				break;
+			case 12:	// Dec
+				
+				break;
+			}
+			
+		}
+		
+		return result;
+	}
+
+}

@@ -1,0 +1,33 @@
+// http://projecteuler.net/problem=25
+// answer = 
+package problem025;
+
+import java.math.BigInteger;
+
+/*
+What is the first term in the Fibonacci sequence to contain 1000 digits? */
+
+public class Problem025 {
+	public int Solve() {
+		BigInteger result = new BigInteger("0");
+		BigInteger num1 = new BigInteger("1");
+		BigInteger num2 = new BigInteger("1");
+		int fibonacciTermNumber = 3;	// This is the numberof the first term that we will compute.
+		while (true){
+			result = num1.add(num2);
+			// Break out of the loop when we find a 1000 digit Fibonacci number
+			if (result.toString().length() >= 1000)
+				break;
+			fibonacciTermNumber++;
+			
+			// This is probably a very inefficient way to reassign these Big Integers. Oh Well.
+			num1 = new BigInteger(num2.toString());
+			num2 = new BigInteger(result.toString());
+
+		}
+		
+		return fibonacciTermNumber;
+		//return result.toString();
+	}
+
+}

@@ -1,0 +1,123 @@
+// http://projecteuler.net/problem=19
+
+package problem019;
+
+/*
+
+
+You are given the following information, but you may prefer to do some research for yourself.
+
+    1 Jan 1900 was a Monday.
+    Thirty days has September,
+    April, June and November.
+    All the rest have thirty-one,
+    Saving February alone,
+    Which has twenty-eight, rain or shine.
+    And on leap years, twenty-nine.
+    A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
+
+How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+
+ */
+
+public class Problem019 {
+	public int Solve() {
+		int result = 0;
+		
+		// 1/1/1900 was a Monday. We will start there.
+		int day = 1, month = 1, year = 1900;
+		int dow = 1;		// Sunday = 0, Monday = 1, etc.
+		
+		day++;
+		dow = (dow + 1) % 7);
+		while (true) {
+			switch(month) {
+			case 1:		// Jan
+				if (day > 31){
+					month = 2;
+					day = 1;
+				}
+				break;
+			case 2:		// Feb
+				int endDay = 28;
+				if (((year % 4) == 0) && (((year % 100) != 0) || ((year % 400) == 0)))
+					endDay = 29;
+				if (day > endDay) {
+					month = 3;
+					day = 1;
+				}
+				break;
+			case 3:		// Mar
+				if (day > 31){
+					month = 4;
+					day = 1;
+				}
+				break;
+			case 4:		// Apr
+				if (day > 30){
+					month = 5;
+					day = 1;
+				}
+				break;
+			case 5:		// May
+				if (day > 31){
+					month = 6;
+					day = 1;
+				}
+				break;
+			case 6:		// Jun
+				if (day > 30){
+					month = 7;
+					day = 1;
+				}
+				break;
+			case 7:		// Jul
+				if (day > 31){
+					month = 8;
+					day = 1;
+				}
+				break;
+			case 8:		// Aug
+				if (day > 31){
+					month = 9;
+					day = 1;
+				}
+				break;
+			case 9:		// Sep
+				if (day > 30){
+					month = 10;
+					day = 1;
+				}
+				break;
+			case 10:	// Oct
+				if (day > 31){
+					month = 11;
+					day = 1;
+				}
+				break;
+			case 11:	// Nov
+				if (day > 30){
+					month = 12;
+					day = 1;
+				}
+				break;
+			case 12:	// Dec
+				if (day > 31){
+					month = 1;
+					day = 1;
+					year++;
+				}
+				break;
+			}
+			if (year > 2000) break;
+			
+			// We don't start counting sundays on the first until we get to 1901
+			if (year > 1900) {
+				if ((dow == 0) && (day == 1)) result++;
+			}
+		}
+		
+		return result;
+	}
+
+}
